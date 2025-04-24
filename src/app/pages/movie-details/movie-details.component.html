@@ -1,0 +1,26 @@
+<div *ngIf="movie" class="details-container">
+<a class="back-btn" routerLink="/">← Go Back</a>
+  
+    <h2>{{ movie.title }}</h2>
+    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+    
+    <div class="info">
+        <p><strong>Release date:</strong> {{ movie.release_date }}</p>
+        <p><strong>Rating:</strong> ⭐ {{ movie.vote_average | number:'1.1-1' }}</p>
+        <p><strong>Overview:</strong> {{ movie.overview }}</p>
+        <p><strong>Original language:</strong> {{ movie.original_language | uppercase }}</p>
+        <p *ngIf="movie.runtime"><strong>Runtime:</strong> {{ movie.runtime }} min</p>        
+    </div>
+    <div *ngIf="cast.length > 0" class="cast-section">
+        <h3>Actors</h3>
+        <div class="cast-grid">
+          <div *ngFor="let actor of cast" class="cast-card">
+            <img *ngIf="actor.profile_path" [src]="'https://image.tmdb.org/t/p/w185' + actor.profile_path" alt="{{ actor.name }}">
+            <p><strong>{{ actor.name }}</strong></p>
+            <p>{{ actor.character }}</p>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  

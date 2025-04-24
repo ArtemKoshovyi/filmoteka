@@ -1,0 +1,28 @@
+<div class="header-container">
+  <h1 class="title">🍿 Movie Time</h1>
+  <p class="subtitle">Fresh picks. Top hits. Let’s watch!</p>
+</div>
+
+<!-- Genre buttons -->
+<div class="genre-buttons">
+  <button *ngFor="let genre of genres"
+          (click)="filterByGenre(genre.id)"
+          [class.active]="genre.id === selectedGenre">
+    {{ genre.name }}
+  </button>
+</div>
+
+<!-- Movie cards -->
+<div class="movie-grid">
+  <div *ngFor="let movie of movies" class="movie-card">
+    <a [routerLink]="['/movie', movie.id]">
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+      <h3>{{ movie.title }}</h3>
+    </a>
+  </div>
+</div>
+
+<!-- Load more button -->
+<div class="load-more">
+  <button (click)="loadMore()">Load more</button>
+</div>

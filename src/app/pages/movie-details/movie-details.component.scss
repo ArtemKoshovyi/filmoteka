@@ -1,0 +1,44 @@
+.details-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .info {
+    text-align: left;
+    padding: 0 1rem;
+  
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.5;
+    }
+  }
+  
+  .back-btn {
+    display: inline-block;
+    text-decoration: none;     // ← ось це прибирає підкреслення
+    background: #ffffff10;
+    border: 1px solid #ffffff30;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  
+    &:hover {
+      background: #ffffff20;
+    }
+  }
+  
